@@ -1,0 +1,51 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: light;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  html,
+  body {
+    overflow-x: hidden;
+  }
+
+  body {
+    font-family: "Schibsted Grotesk", system-ui, sans-serif;
+    line-height: 1.5;
+    text-rendering: optimizeLegibility;
+  }
+
+  /* Honour the user's choice. */
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.001ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.001ms !important;
+    }
+  }
+
+  /* Brand-tinted text selection. */
+  ::selection {
+    background: rgba(158, 74, 50, 0.18);
+    color: #16140f;
+  }
+}
+
+@layer components {
+  /* Brand emphasis: <em> rendered in clay, not italic. */
+  .em-brand {
+    @apply not-italic text-clay;
+  }
+}
