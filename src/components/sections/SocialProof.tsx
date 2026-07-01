@@ -8,36 +8,41 @@ import { stats, testimonials } from "../../data/content";
 
 export function SocialProof() {
   return (
-    <Section labelledBy="proof-title">
+    <Section variant="feed" labelledBy="proof-title">
       <Reveal>
-        <Kicker className="mb-[22px]">From parents at the first seminar</Kicker>
-        <Heading id="proof-title" level={2} size="h2">
+        <Kicker className="mb-4">From parents at the first seminar</Kicker>
+        <Heading id="proof-title" level={2} size="h2-feed">
           Parents are already <Em>finding their way back.</Em>
         </Heading>
       </Reveal>
 
-      <dl className="mt-11 grid grid-cols-2 lg:grid-cols-4 gap-[18px]">
+      <dl className="mt-8 grid grid-cols-2 gap-4">
         {stats.map((s) => (
-          <div key={s.label} className="text-center px-3 py-6">
+          <div
+            key={s.label}
+            className="rounded-card-lg border border-border bg-soft p-4 text-center"
+          >
             <dt className="sr-only">{s.label}</dt>
-            <dd className="text-stat font-light text-primary">{s.value}</dd>
-            <dd className="mt-3 font-mono text-[11px] uppercase tracking-[0.1em] text-meta">
+            <dd className="text-[clamp(28px,4vw,40px)] font-light text-primary leading-none tracking-[-0.03em]">
+              {s.value}
+            </dd>
+            <dd className="mt-2 font-mono text-[10px] uppercase tracking-[0.1em] text-meta leading-snug">
               {s.label}
             </dd>
           </div>
         ))}
       </dl>
 
-      <div className="mt-9 grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="mt-8 grid gap-4 grid-cols-1 sm:grid-cols-2">
         {testimonials.map((t, i) => (
-          <Reveal key={t.author} delay={i * 60}>
+          <Reveal key={t.author} delay={i * 50}>
             <Card interactive className="h-full bg-soft">
-              <CardContent className="flex flex-col gap-4 min-h-[200px] p-7">
+              <CardContent className="flex flex-col gap-3 min-h-[180px] p-5">
                 <Stars rating={t.rating} />
-                <blockquote className="text-[18px] font-light leading-snug tracking-[-0.01em] text-foreground">
+                <blockquote className="text-[16px] font-light leading-snug tracking-[-0.01em] text-foreground">
                   <p>&ldquo;{t.quote}&rdquo;</p>
                 </blockquote>
-                <figcaption className="mt-auto font-mono text-[12px] uppercase tracking-[0.1em] text-primary">
+                <figcaption className="mt-auto font-mono text-[11px] uppercase tracking-[0.1em] text-primary">
                   {t.author}
                 </figcaption>
               </CardContent>

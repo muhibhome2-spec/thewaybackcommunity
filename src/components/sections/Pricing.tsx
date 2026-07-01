@@ -9,11 +9,16 @@ import { Tick } from "../primitives/Tick";
 import { included } from "../../data/content";
 import { site } from "../../config/site";
 
+/**
+ * Full pricing panel — sits below the two-column landing as the
+ * comprehensive "everything included + both plans" section. The
+ * right-rail JoinCard covers monthly-only; this shows yearly too.
+ */
 export function Pricing() {
   return (
-    <Section tone="tint" id={site.anchors.join} labelledBy="pricing-title">
+    <Section tone="tint" id="pricing" labelledBy="pricing-title">
       <Reveal>
-        <Kicker className="mb-[22px]">Join the community</Kicker>
+        <Kicker className="mb-[22px]">Membership</Kicker>
         <Heading id="pricing-title" level={2} size="h2">
           One community. <Em>Two ways</Em> to join.
         </Heading>
@@ -96,9 +101,7 @@ function PriceCard({
     <Card
       className={
         "relative rounded-card-xl flex flex-col " +
-        (featured
-          ? "border-[1.5px] border-primary shadow-feat"
-          : "")
+        (featured ? "border-[1.5px] border-primary shadow-feat" : "")
       }
     >
       {featured && (

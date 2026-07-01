@@ -14,25 +14,25 @@ import { site } from "../../config/site";
 
 export function Features() {
   return (
-    <Section tone="soft" id={site.anchors.included} labelledBy="features-title">
+    <Section variant="feed" id={site.anchors.included} labelledBy="features-title">
       <Reveal>
-        <Kicker className="mb-[22px]">What you get</Kicker>
-        <Heading id="features-title" level={2} size="h2">
+        <Kicker className="mb-4">What you get</Kicker>
+        <Heading id="features-title" level={2} size="h2-feed">
           Everything you need, <Em>in one place.</Em>
         </Heading>
       </Reveal>
-      <div className="mt-12 grid gap-[18px] grid-cols-1 md:grid-cols-2">
+      <div className="mt-8 grid gap-4 grid-cols-1 sm:grid-cols-2">
         {features.map((f, i) => (
-          <Reveal key={f.title} delay={i * 80}>
+          <Reveal key={f.title} delay={i * 60}>
             <Card interactive className="h-full">
               <CardHeader className="gap-2">
                 <p className="font-mono text-[12px] uppercase tracking-[0.16em] text-primary">
                   {f.cadence}
                 </p>
-                <CardTitle>{f.title}</CardTitle>
+                <CardTitle className="text-h3-sm">{f.title}</CardTitle>
               </CardHeader>
               <CardContent>
-                <CardDescription>{f.description}</CardDescription>
+                <CardDescription className="text-[15px]">{f.description}</CardDescription>
               </CardContent>
             </Card>
           </Reveal>

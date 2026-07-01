@@ -93,6 +93,7 @@ const config: Config = {
         "h3-lg": ["clamp(22px,3vw,30px)", { letterSpacing: "-0.02em", lineHeight: "1.15" }],
         "h3-xl": ["clamp(28px,3.6vw,40px)", { letterSpacing: "-0.025em", lineHeight: "1.1" }],
         h2: ["clamp(34px,5.6vw,58px)", { letterSpacing: "-0.03em", lineHeight: "1.05" }],
+        "h2-feed": ["clamp(26px,3.8vw,40px)", { letterSpacing: "-0.02em", lineHeight: "1.1" }],
         "h2-final": ["clamp(36px,6.2vw,68px)", { letterSpacing: "-0.03em", lineHeight: "1.05" }],
         h1: ["clamp(46px,9vw,104px)", { letterSpacing: "-0.035em", lineHeight: "1" }],
         display: ["clamp(52px,11vw,118px)", { letterSpacing: "-0.045em", lineHeight: "0.92" }],
