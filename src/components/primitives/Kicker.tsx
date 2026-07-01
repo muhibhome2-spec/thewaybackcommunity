@@ -6,15 +6,18 @@ type KickerProps = {
   className?: string;
   /** Render as a span instead of a div (useful inline). */
   as?: "div" | "span" | "p";
+  /** Optional id, e.g. to pair with Section's aria-labelledby. */
+  id?: string;
 };
 
 /**
  * The mono uppercase section eyebrow. Used to signal section boundaries
  * without leaning on a heading and consume excessive visual weight.
  */
-export function Kicker({ children, className, as: Tag = "div" }: KickerProps) {
+export function Kicker({ children, className, as: Tag = "div", id }: KickerProps) {
   return (
     <Tag
+      id={id}
       className={cn(
         "font-mono text-kicker uppercase text-clay",
         className,

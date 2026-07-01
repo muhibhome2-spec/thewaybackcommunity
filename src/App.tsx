@@ -10,6 +10,7 @@ import { Method } from "./components/sections/Method";
 import { BehindTheScreen } from "./components/sections/BehindTheScreen";
 import { Features } from "./components/sections/Features";
 import { SocialProof } from "./components/sections/SocialProof";
+import { WhoFor } from "./components/sections/WhoFor";
 import { Rules } from "./components/sections/Rules";
 import { Founder } from "./components/sections/Founder";
 import { FAQ } from "./components/sections/FAQ";
@@ -23,6 +24,13 @@ import { FinalCTA } from "./components/sections/FinalCTA";
  * 2. Two-column body: prose feed on the left, sticky join card on the
  *    right. On mobile the join card renders directly under the banner
  *    so the price and CTA land before the reading flow.
+ *
+ * Feed order is front-loaded toward what converts: proof and the
+ * concrete offer come first (stats/testimonials, self-qualification,
+ * what's included, the flagship course), narrative and trust content
+ * follow, objections are handled last. Most visitors only scan the
+ * top of a page, so the highest-value content sits there.
+ *
  * 3. Full pricing panel and final CTA sit as bands underneath.
  */
 export function App() {
@@ -43,11 +51,12 @@ export function App() {
         <Container className="py-10 md:py-16">
           <div className="grid gap-10 lg:gap-14 lg:grid-cols-[minmax(0,1fr)_360px]">
             <div className="order-2 lg:order-1 divide-y divide-border/80">
+              <SocialProof />
+              <WhoFor />
+              <Features />
+              <BehindTheScreen />
               <AboutBlock />
               <Method />
-              <BehindTheScreen />
-              <Features />
-              <SocialProof />
               <Rules />
               <Founder />
               <FAQ />

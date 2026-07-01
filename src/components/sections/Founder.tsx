@@ -48,18 +48,12 @@ export function Founder() {
                 </p>
 
                 <p className="mt-4 text-[16px] font-light text-muted-foreground leading-[1.6]">
-                  Muhib has spent fifteen years as a writer and educator,
-                  teaching, working with communities, and studying with scholars
-                  of the Islamic tradition across four continents. He advises
-                  charities and public figures, and leads retreats and seminars
-                  around the world.
-                </p>
-                <p className="mt-3 text-[16px] font-light text-muted-foreground leading-[1.6]">
-                  He built this community because he kept meeting the same
-                  thing: bright, deeply loved teenagers quietly struggling, and
-                  parents who would do anything for them but did not know how to
-                  reach them. He had known that distance from the inside. And he
-                  knew it did not have to stay shut.
+                  Fifteen years as a writer and educator, studying and teaching
+                  across four continents &mdash; and one pattern he kept
+                  meeting: bright, deeply loved teenagers quietly struggling,
+                  and parents who did not know how to reach them. He had known
+                  that distance from the inside. He knew it did not have to
+                  stay shut.
                 </p>
 
                 <a

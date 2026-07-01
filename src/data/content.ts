@@ -83,14 +83,6 @@ export const stats: readonly Stat[] = [
   { value: "90", label: "minute masterclass each month" },
 ] as const;
 
-export const futureOutcomes: readonly string[] = [
-  "You understand why they behave the way they do.",
-  "Conversations feel easier, and happen more often.",
-  "You have stopped blaming yourself.",
-  "You finally understand the phone, and the world inside it.",
-  "And you are not carrying any of it alone.",
-] as const;
-
 export const method: readonly MethodStep[] = [
   { title: "Understand", description: "The teenage brain, and the world they are actually living in." },
   { title: "Interpret", description: "What their silence and their behaviour are really telling you." },
