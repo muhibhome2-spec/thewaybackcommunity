@@ -29,7 +29,7 @@ export function App() {
     <div className="bg-paper text-ink pb-[84px] md:pb-0">
       <a
         href="#main"
-        className="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[100] focus:bg-clay focus:text-clay-ink focus:px-4 focus:py-2 focus:rounded-pill"
+        className="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[100] focus:bg-primary focus:text-primary-foreground focus:px-4 focus:py-2 focus:rounded-pill"
       >
         Skip to content
       </a>

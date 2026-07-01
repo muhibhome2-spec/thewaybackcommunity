@@ -2,7 +2,7 @@ import { Section } from "../primitives/Section";
 import { Reveal } from "../primitives/Reveal";
 import { Kicker } from "../primitives/Kicker";
 import { Em, Heading } from "../primitives/Heading";
-import { Card } from "../primitives/Card";
+import { Card, CardContent, CardHeader, CardTitle } from "../ui/card";
 import { method } from "../../data/content";
 
 export function Method() {
@@ -18,16 +18,21 @@ export function Method() {
         {method.map((step, i) => (
           <li key={step.title}>
             <Reveal delay={i * 90}>
-              <Card tone="soft" className="h-full p-7">
-                <div className="font-mono text-kicker tracking-[0.1em] text-clay">
-                  {String(i + 1).padStart(2, "0")}
-                </div>
-                <div className="mt-[14px] text-h3-sm font-normal">
-                  {step.title}
-                </div>
-                <p className="mt-[10px] text-[16px] font-light text-sub leading-snug">
-                  {step.description}
-                </p>
+              <Card
+                interactive
+                className="h-full bg-soft"
+              >
+                <CardHeader className="gap-3">
+                  <span className="font-mono text-kicker tracking-[0.1em] text-primary">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                  <CardTitle className="text-h3-sm">{step.title}</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-[16px] font-light text-muted-foreground leading-snug">
+                    {step.description}
+                  </p>
+                </CardContent>
               </Card>
             </Reveal>
           </li>

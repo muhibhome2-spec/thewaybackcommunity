@@ -13,7 +13,7 @@ export function Solution() {
             No parent should have to work this out by trial and error, on their
             own child.
           </p>
-          <p className="my-6 text-why-big text-clay font-light">
+          <p className="my-6 text-why-big text-primary font-light">
             <Em>So we built the place we wished every parent had.</Em>
           </p>
           <p className="text-why font-light text-ink">

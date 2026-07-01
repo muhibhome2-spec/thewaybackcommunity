@@ -12,12 +12,12 @@ export function Cost() {
           When we are not sure, <Em>we guess.</Em>
         </Heading>
         <div className="mt-[26px] grid gap-[26px] sm:grid-cols-2 max-w-prose">
-          <p className="text-prose font-light text-sub">
+          <p className="text-prose font-light text-muted-foreground">
             And guessing has a price. We push when we should wait. We take
             silence personally. We reach for the phone as a punishment, and the
             wall gets higher.
           </p>
-          <p className="text-prose font-light text-sub">
+          <p className="text-prose font-light text-muted-foreground">
             The distance grows. They pull further away. Modern parenting moves
             too fast to face on intuition alone, in a world we never grew up in.
           </p>

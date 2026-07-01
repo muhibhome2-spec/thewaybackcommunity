@@ -14,7 +14,7 @@ export function WhoFor() {
           This community is <Em>for you if&hellip;</Em>
         </Heading>
         <CheckList className="mt-9 max-w-proseSm" items={forYou} />
-        <p className="mt-[22px] max-w-[680px] text-lead font-light text-sub">
+        <p className="mt-[22px] max-w-[680px] text-lead font-light text-muted-foreground">
           If you saw yourself in even one of those, you belong here.
         </p>
       </Reveal>

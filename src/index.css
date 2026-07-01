@@ -2,9 +2,48 @@
 @tailwind components;
 @tailwind utilities;
 
+/*
+ * shadcn semantic tokens, wired to The Way Back Community brand.
+ *
+ * Every shadcn primitive (Button, Card, Badge, Accordion, …) reads from
+ * these CSS variables. Changing a brand colour here flows through every
+ * component automatically.
+ */
 @layer base {
   :root {
     color-scheme: light;
+
+    /* Surfaces */
+    --background: #f5f2ec;            /* paper */
+    --foreground: #16140f;            /* ink */
+    --card: #f5f2ec;
+    --card-foreground: #16140f;
+    --popover: #f5f2ec;
+    --popover-foreground: #16140f;
+
+    /* Brand action */
+    --primary: #9e4a32;               /* clay */
+    --primary-foreground: #fdfbf7;
+
+    /* Secondary / muted surfaces */
+    --secondary: #efeae0;             /* tint */
+    --secondary-foreground: #16140f;
+    --muted: #efeae0;                 /* tint */
+    --muted-foreground: #5a554b;      /* AA-safe body grey */
+    --accent: #f3ebe4;                /* claybg */
+    --accent-foreground: #16140f;
+
+    /* States */
+    --destructive: #b32d1e;
+    --destructive-foreground: #fdfbf7;
+
+    /* Borders + rings */
+    --border: rgba(22, 20, 15, 0.10);
+    --input: rgba(22, 20, 15, 0.18);
+    --ring: #9e4a32;
+
+    /* shadcn radius scale */
+    --radius: 0.75rem;
   }
 
   html {
@@ -17,12 +56,14 @@
   }
 
   body {
+    @apply bg-background text-foreground;
     font-family: "Schibsted Grotesk", system-ui, sans-serif;
     line-height: 1.5;
     text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
-  /* Honour the user's choice. */
   @media (prefers-reduced-motion: reduce) {
     html {
       scroll-behavior: auto;
@@ -36,7 +77,6 @@
     }
   }
 
-  /* Brand-tinted text selection. */
   ::selection {
     background: rgba(158, 74, 50, 0.18);
     color: #16140f;
@@ -46,6 +86,6 @@
 @layer components {
   /* Brand emphasis: <em> rendered in clay, not italic. */
   .em-brand {
-    @apply not-italic text-clay;
+    @apply not-italic text-primary;
   }
 }

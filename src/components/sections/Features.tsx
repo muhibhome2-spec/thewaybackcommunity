@@ -2,17 +2,19 @@ import { Section } from "../primitives/Section";
 import { Reveal } from "../primitives/Reveal";
 import { Kicker } from "../primitives/Kicker";
 import { Em, Heading } from "../primitives/Heading";
-import { Card } from "../primitives/Card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "../ui/card";
 import { features } from "../../data/content";
 import { site } from "../../config/site";
 
 export function Features() {
   return (
-    <Section
-      tone="soft"
-      id={site.anchors.included}
-      labelledBy="features-title"
-    >
+    <Section tone="soft" id={site.anchors.included} labelledBy="features-title">
       <Reveal>
         <Kicker className="mb-[22px]">What you get</Kicker>
         <Heading id="features-title" level={2} size="h2">
@@ -23,13 +25,15 @@ export function Features() {
         {features.map((f, i) => (
           <Reveal key={f.title} delay={i * 80}>
             <Card interactive className="h-full">
-              <div className="font-mono text-[12px] uppercase tracking-[0.16em] text-clay">
-                {f.cadence}
-              </div>
-              <h3 className="mt-4 text-h3 font-normal">{f.title}</h3>
-              <p className="mt-3 text-[18px] font-light text-sub leading-relaxed">
-                {f.description}
-              </p>
+              <CardHeader className="gap-2">
+                <p className="font-mono text-[12px] uppercase tracking-[0.16em] text-primary">
+                  {f.cadence}
+                </p>
+                <CardTitle>{f.title}</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <CardDescription>{f.description}</CardDescription>
+              </CardContent>
             </Card>
           </Reveal>
         ))}

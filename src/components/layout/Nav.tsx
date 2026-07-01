@@ -1,27 +1,26 @@
-import { Button } from "../primitives/Button";
 import { Container } from "../primitives/Container";
+import { ScrollButton } from "../primitives/ScrollButton";
 import { site } from "../../config/site";
 
 /**
- * Sticky navigation. The wordmark is the link home; the only action is
- * the membership CTA, keeping the bar visually quiet but always primed.
+ * Sticky navigation. Mark links home; sole action is the membership CTA.
  */
 export function Nav() {
   return (
     <nav
       aria-label="Primary"
-      className="sticky top-0 z-nav border-b border-hairline bg-paper/90 backdrop-blur-md"
+      className="sticky top-0 z-nav border-b border-border bg-background/85 backdrop-blur-md"
     >
       <Container className="flex items-center justify-between py-4">
         <a
           href="#top"
-          className="font-mono text-[13px] tracking-[0.2em] uppercase font-medium text-ink hover:opacity-80 transition-opacity"
+          className="font-mono text-[13px] tracking-[0.2em] uppercase font-medium text-foreground hover:opacity-80 transition-opacity focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background rounded-sm"
         >
-          The Way Back <span className="text-clay">Community</span>
+          The Way Back <span className="text-primary">Community</span>
         </a>
-        <Button variant="primary-sm" to={site.anchors.join}>
+        <ScrollButton to={site.anchors.join} size="sm">
           Join the community
-        </Button>
+        </ScrollButton>
       </Container>
     </nav>
   );

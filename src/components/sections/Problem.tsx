@@ -12,11 +12,11 @@ export function Problem() {
           The door that <Em>closed.</Em>
         </Heading>
         <div className="mt-[26px] grid gap-[26px] sm:grid-cols-2 max-w-prose">
-          <p className="text-prose font-light text-sub">
+          <p className="text-prose font-light text-muted-foreground">
             One word answers. A bedroom door that stays shut. A child you love,
             and do not quite recognise any more.
           </p>
-          <p className="text-prose font-light text-sub">
+          <p className="text-prose font-light text-muted-foreground">
             And that thought, late at night, that you would never say out loud.
             What happened to my beautiful child? You are not the only one. Far
             from it.
