@@ -1,7 +1,15 @@
+import { CalendarClock, MessageCircle, Video, BookOpen } from "lucide-react";
 import { Container } from "../primitives/Container";
 import { Kicker } from "../primitives/Kicker";
 import { Em } from "../primitives/Heading";
 import { Badge } from "../ui/badge";
+
+const HIGHLIGHTS = [
+  { icon: CalendarClock, label: "Live coaching every two weeks" },
+  { icon: MessageCircle, label: "Private WhatsApp community" },
+  { icon: Video, label: "90-min masterclass monthly" },
+  { icon: BookOpen, label: "Behind the Screen course included" },
+] as const;
 
 /**
  * Compact top-of-page banner. Type-driven — no cover image — so the
@@ -30,23 +38,16 @@ export function CommunityBanner() {
           their own.
         </p>
 
-        <ul className="animate-rise [animation-delay:260ms] mt-8 flex flex-wrap gap-x-6 gap-y-2">
-          {[
-            "Live coaching every two weeks",
-            "Private WhatsApp community",
-            "90-min masterclass monthly",
-            "Behind the Screen course included",
-          ].map((c, i, arr) => (
-            <li
-              key={c}
-              className={
-                "relative font-mono text-[12px] tracking-[0.1em] uppercase text-meta " +
-                (i < arr.length - 1
-                  ? "after:content-[''] after:absolute after:right-[-14px] after:top-1/2 after:w-[3px] after:h-[3px] after:-translate-y-1/2 after:rounded-full after:bg-meta/60"
-                  : "")
-              }
-            >
-              {c}
+        <ul className="animate-rise [animation-delay:260ms] mt-8 flex flex-wrap gap-2 list-none p-0">
+          {HIGHLIGHTS.map(({ icon: Icon, label }) => (
+            <li key={label}>
+              <Badge
+                variant="outline"
+                className="gap-1.5 border-foreground/12 bg-background/70 px-3.5 py-[7px] font-sans text-[13px] font-normal normal-case tracking-normal text-foreground"
+              >
+                <Icon aria-hidden="true" className="size-3.5 text-primary" />
+                {label}
+              </Badge>
             </li>
           ))}
         </ul>
