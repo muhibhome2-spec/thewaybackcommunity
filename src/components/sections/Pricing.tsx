@@ -5,14 +5,13 @@ import { Em, Heading } from "../primitives/Heading";
 import { Button } from "../ui/button";
 import { Badge } from "../ui/badge";
 import { Card, CardContent, CardFooter, CardHeader } from "../ui/card";
-import { Tick } from "../primitives/Tick";
-import { included } from "../../data/content";
+import { FoundingProgress } from "../primitives/FoundingProgress";
 import { site } from "../../config/site";
 
 /**
- * Full pricing panel — sits below the two-column landing as the
- * comprehensive "everything included + both plans" section. The
- * right-rail JoinCard covers monthly-only; this shows yearly too.
+ * Plan-comparison panel. Purely about choosing Monthly vs Yearly —
+ * the full benefits list already lives once, in JoinCard, so it isn't
+ * repeated here verbatim.
  */
 export function Pricing() {
   return (
@@ -24,28 +23,14 @@ export function Pricing() {
         </Heading>
       </Reveal>
 
-      <div className="mx-auto mt-11 max-w-[560px] grid gap-3.5">
-        <div className="font-mono text-[13px] uppercase tracking-[0.16em] text-foreground mb-1.5">
-          Everything included
-        </div>
-        {included.map((line) => (
-          <div
-            key={line}
-            className="flex items-start gap-3.5 text-[19px] font-light text-foreground"
-          >
-            <span aria-hidden="true" className="mt-0.5 flex-none text-primary">
-              <Tick />
-            </span>
-            <span>{line}</span>
-          </div>
-        ))}
+      <div className="mx-auto mt-9 max-w-[720px] text-center bg-clay-tint border border-clay-line rounded-card px-7 py-5">
+        <p className="text-found font-light">
+          <strong className="font-semibold text-primary">Founding offer.</strong>{" "}
+          The first 100 members lock in today&rsquo;s price for as long as they
+          stay. After 100, the price goes up.
+        </p>
+        <FoundingProgress className="mt-4 max-w-[320px] mx-auto" />
       </div>
-
-      <p className="mx-auto mt-9 max-w-[720px] text-center bg-clay-tint border border-clay-line rounded-card px-7 py-5 text-found font-light">
-        <strong className="font-semibold text-primary">Founding offer.</strong>{" "}
-        The first 100 members lock in today&rsquo;s price for as long as they
-        stay. After 100, the price goes up.
-      </p>
 
       <div className="mx-auto mt-9 max-w-pricing grid gap-[18px] md:grid-cols-2">
         <PriceCard
@@ -56,7 +41,7 @@ export function Pricing() {
           cta={
             <Button asChild variant="outline" className="w-full">
               <a href={site.joinUrl} target="_blank" rel="noopener noreferrer">
-                Join monthly
+                Join the community
               </a>
             </Button>
           }

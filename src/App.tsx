@@ -11,7 +11,6 @@ import { BehindTheScreen } from "./components/sections/BehindTheScreen";
 import { Features } from "./components/sections/Features";
 import { SocialProof } from "./components/sections/SocialProof";
 import { WhoFor } from "./components/sections/WhoFor";
-import { Rules } from "./components/sections/Rules";
 import { Founder } from "./components/sections/Founder";
 import { FAQ } from "./components/sections/FAQ";
 import { Pricing } from "./components/sections/Pricing";
@@ -57,7 +56,6 @@ export function App() {
               <BehindTheScreen />
               <AboutBlock />
               <Method />
-              <Rules />
               <Founder />
               <FAQ />
             </div>

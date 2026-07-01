@@ -192,6 +192,11 @@ export const faqs: readonly Faq[] = [
       "If you can send a message, you can be here. It runs on WhatsApp and Zoom, nothing new to learn.",
   },
   {
+    question: "What if my first month feels like a waste?",
+    answer:
+      "Cancel any time, no contract. And because every session is recorded, nothing is lost even if you only make it to the first few weeks.",
+  },
+  {
     question: "Can I cancel any time?",
     answer:
       "Yes. Month to month, cancel whenever you need, and every session is recorded so nothing is ever lost.",

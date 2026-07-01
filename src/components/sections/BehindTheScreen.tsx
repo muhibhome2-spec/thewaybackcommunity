@@ -1,8 +1,10 @@
 import { Section } from "../primitives/Section";
 import { Reveal } from "../primitives/Reveal";
 import { Kicker } from "../primitives/Kicker";
+import { ScrollButton } from "../primitives/ScrollButton";
 import { Badge } from "../ui/badge";
 import { weeks } from "../../data/content";
+import { site } from "../../config/site";
 
 /**
  * Flagship-course highlight box. Feed-column: renders as a distinct
@@ -59,6 +61,10 @@ export function BehindTheScreen() {
             </li>
           ))}
         </ol>
+
+        <div className="mt-8 flex">
+          <ScrollButton to={site.anchors.join}>Unlock the masterclass</ScrollButton>
+        </div>
       </div>
     </Section>
   );

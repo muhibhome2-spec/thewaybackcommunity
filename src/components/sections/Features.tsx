@@ -10,11 +10,10 @@ import {
   CardTitle,
 } from "../ui/card";
 import { features } from "../../data/content";
-import { site } from "../../config/site";
 
 export function Features() {
   return (
-    <Section variant="feed" id={site.anchors.included} labelledBy="features-title">
+    <Section variant="feed" labelledBy="features-title">
       <Reveal>
         <Kicker className="mb-4">What you get</Kicker>
         <Heading id="features-title" level={2} size="h2-feed">

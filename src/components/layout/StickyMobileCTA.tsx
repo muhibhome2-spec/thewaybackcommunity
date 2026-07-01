@@ -15,7 +15,7 @@ export function StickyMobileCTA() {
       }
     >
       <ScrollButton to={site.anchors.join} className="w-full">
-        Join from £10.99 / month
+        Join the community — from £10.99/mo
       </ScrollButton>
     </div>
   );

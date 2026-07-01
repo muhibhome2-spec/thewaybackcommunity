@@ -19,7 +19,7 @@ export function FinalCTA() {
           </h2>
           <div className="mt-9 flex justify-center flex-wrap gap-3.5">
             <ScrollButton to={site.anchors.join} size="lg">
-              Join parents who refuse to give up
+              Join the community
             </ScrollButton>
           </div>
           <p className="mt-7 font-mono text-[12px] tracking-[0.12em] uppercase text-meta">

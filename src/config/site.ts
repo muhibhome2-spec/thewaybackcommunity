@@ -6,12 +6,23 @@ export const site = {
   joinUrl: "#" as const,
   /** Founder portrait. Leave empty to fall back to the MI monogram. */
   avatarUrl: "" as const,
-  /** External founder profile. */
-  founderUrl: "https://muhibidris.vercel.app" as const,
+  /** Legal / support links for the footer. Set real URLs before launch. */
+  termsUrl: "#" as const,
+  privacyUrl: "#" as const,
+  supportEmail: "" as const,
+  /**
+   * Founding-member scarcity counter. Leave `claimed` at null until you're
+   * actually tracking signups — an unverifiable number is worse than none.
+   * Set it to a real count once you have one and the progress bar appears
+   * on its own in JoinCard and Pricing.
+   */
+  founding: {
+    total: 100,
+    claimed: null as number | null,
+  },
   /** DOM ids used for in-page anchors. */
   anchors: {
     join: "join",
-    included: "included",
   },
 } as const;
 

@@ -2,19 +2,21 @@ import { Section } from "../primitives/Section";
 import { Reveal } from "../primitives/Reveal";
 import { Kicker } from "../primitives/Kicker";
 import { Em, Heading } from "../primitives/Heading";
-import { method } from "../../data/content";
+import { method, whyItWorks } from "../../data/content";
 
 /**
- * Compressed into one divided strip instead of four boxed cards.
- * Same four steps, same words — but one flat panel reads as a single
- * quick scan instead of four separate things to process, which is the
- * effect we want after several proof-heavy sections above it.
+ * How it works + why it works, combined into one section under one
+ * heading. These two were previously separate sections (Method, Rules)
+ * that opened with an identical Kicker+Heading template back to back —
+ * merging them removes one repeat of that pattern from the feed and
+ * keeps "why it works" visually subordinate to "how it works" instead
+ * of reading as a second, equally-weighted section.
  */
 export function Method() {
   return (
     <Section variant="feed" labelledBy="method-title">
       <Reveal>
-        <Kicker className="mb-4">A method, not random advice</Kicker>
+        <Kicker className="mb-4">How it works</Kicker>
         <Heading id="method-title" level={2} size="h2-feed">
           The Way Back <Em>Method.</Em>
         </Heading>
@@ -37,6 +39,31 @@ export function Method() {
           </li>
         ))}
       </ol>
+
+      <div className="mt-10">
+        <h3 className="font-mono text-[13px] uppercase tracking-[0.16em] text-primary mb-4">
+          Why it works
+        </h3>
+        <ol className="grid gap-4 sm:grid-cols-2 list-none p-0">
+          {whyItWorks.map((w, i) => (
+            <Reveal key={w.title} delay={i * 50}>
+              <div className="flex gap-3">
+                <div className="flex-none w-8 h-8 rounded-full bg-clay-tint text-primary font-mono text-[12px] flex items-center justify-center leading-none">
+                  {String(i + 1).padStart(2, "0")}
+                </div>
+                <div>
+                  <div className="text-[17px] font-normal text-foreground tracking-[-0.01em]">
+                    {w.title}
+                  </div>
+                  <p className="mt-0.5 text-[14px] font-light text-muted-foreground leading-snug">
+                    {w.description}
+                  </p>
+                </div>
+              </div>
+            </Reveal>
+          ))}
+        </ol>
+      </div>
     </Section>
   );
 }

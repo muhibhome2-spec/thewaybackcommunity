@@ -55,15 +55,6 @@ export function Founder() {
                   that distance from the inside. He knew it did not have to
                   stay shut.
                 </p>
-
-                <a
-                  href={site.founderUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-block mt-5 font-mono text-[12px] tracking-[0.08em] uppercase text-primary hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-tint rounded-sm"
-                >
-                  More about Muhib →
-                </a>
               </div>
             </div>
           </CardContent>
