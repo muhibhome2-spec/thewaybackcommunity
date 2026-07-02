@@ -20,7 +20,7 @@ export function Reveal({ children, delay = 0, className }: RevealProps) {
       ref={ref}
       style={delay ? { transitionDelay: `${delay}ms` } : undefined}
       className={cn(
-        "transition-[opacity,transform] duration-700 ease-out motion-reduce:transition-none",
+        "transition-[opacity,transform] duration-500 ease-out motion-reduce:transition-none",
         revealed ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5",
         className,
       )}

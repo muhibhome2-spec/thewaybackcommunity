@@ -87,7 +87,13 @@ const config: Config = {
         claybg: "#f3ebe4",
         ink: "#16140f",
         sub: "#5a554b",
-        meta: "#7d7669",
+        // #70695e (not the original #7d7669): the original only reached
+        // 3.75-4.24:1 depending on surface — passes WCAG AA for large
+        // text but fails the 4.5:1 small-text threshold, and meta is
+        // used almost exclusively at 11-13px caption sizes. This value
+        // clears 4.5:1+ against every surface it's used on (paper,
+        // soft, claybg, tint) while keeping the same warm brown-grey hue.
+        meta: "#70695e",
         clay: {
           DEFAULT: "#9e4a32",
           deep: "#7f3a23",
@@ -171,7 +177,7 @@ const config: Config = {
         },
       },
       animation: {
-        rise: "rise 0.7s ease both",
+        rise: "rise 0.5s ease-out both",
         "accordion-down": "accordion-down 0.25s cubic-bezier(0.2,0.7,0.2,1)",
         "accordion-up": "accordion-up 0.2s cubic-bezier(0.2,0.7,0.2,1)",
       },
