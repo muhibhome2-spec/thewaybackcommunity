@@ -25,11 +25,11 @@ export function WhoFor() {
             {forYou.map((f) => (
               <li
                 key={f}
-                className="flex items-start gap-2.5 text-[15px] font-light text-foreground leading-snug"
+                className="flex items-start gap-2.5 text-sm font-normal text-foreground leading-snug"
               >
                 <span
                   aria-hidden="true"
-                  className="mt-[7px] flex-none w-1.5 h-1.5 rounded-full bg-primary"
+                  className="mt-2 flex-none w-1.5 h-1.5 rounded-full bg-primary"
                 />
                 <span>{f}</span>
               </li>

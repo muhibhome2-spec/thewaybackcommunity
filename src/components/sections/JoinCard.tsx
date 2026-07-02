@@ -49,15 +49,15 @@ export function JoinCard() {
           <div className="flex items-center gap-3">
             <div
               aria-hidden="true"
-              className="w-11 h-11 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-mono text-[13px] tracking-wide"
+              className="w-11 h-11 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-mono text-xs"
             >
               MI
             </div>
             <div className="min-w-0">
-              <div className="font-mono text-[11px] uppercase tracking-[0.16em] text-meta">
+              <div className="font-mono text-2xs uppercase text-meta">
                 Membership
               </div>
-              <div className="text-[16px] font-normal text-foreground truncate">
+              <div className="text-base font-medium text-foreground truncate">
                 The Way Back Community
               </div>
             </div>
@@ -75,7 +75,7 @@ export function JoinCard() {
           <div
             role="group"
             aria-label="Billing period"
-            className="inline-flex rounded-pill border border-border bg-soft p-1 self-start"
+            className="inline-flex gap-1 rounded-pill border border-border bg-soft p-1 self-start"
           >
             {(["monthly", "yearly"] as const).map((p) => (
               <button
@@ -84,7 +84,7 @@ export function JoinCard() {
                 aria-pressed={plan === p}
                 onClick={() => setPlan(p)}
                 className={cn(
-                  "rounded-pill px-3.5 py-1.5 text-[12px] font-medium capitalize transition-colors",
+                  "min-h-11 min-w-11 flex items-center justify-center rounded-pill px-4 text-xs font-medium capitalize tracking-normal transition-colors active:scale-[0.97]",
                   "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-soft",
                   plan === p
                     ? "bg-primary text-primary-foreground"
@@ -97,11 +97,11 @@ export function JoinCard() {
           </div>
 
           <div>
-            <div className="flex items-baseline gap-2 font-light leading-none tracking-[-0.03em]">
-              <span className="text-[44px] text-foreground">{copy.amount}</span>
-              <span className="text-[15px] text-meta">{copy.period}</span>
+            <div className="flex items-baseline gap-2 font-normal leading-none tracking-[-0.03em]">
+              <span className="text-2xl text-foreground">{copy.amount}</span>
+              <span className="text-sm text-meta">{copy.period}</span>
             </div>
-            <p className="mt-2 text-[13px] text-muted-foreground leading-relaxed">
+            <p className="mt-2 text-xs tracking-normal text-muted-foreground leading-relaxed">
               {copy.note}{" "}
               {plan === "monthly" ? "Or £109/yr — two months free." : "Founding price locked in for as long as you stay."}
             </p>
@@ -115,22 +115,22 @@ export function JoinCard() {
             </a>
           </Button>
           <FoundingProgress className="mt-3" />
-          <p className="mt-3 text-center font-mono text-[11px] uppercase tracking-[0.12em] text-meta">
+          <p className="mt-3 text-center font-mono text-2xs uppercase text-meta">
             Founding price for the first 100
           </p>
         </CardContent>
 
         <CardFooter className="flex-col items-stretch gap-3 pt-2 border-t border-border/70 mt-2">
-          <p className="font-mono text-[11px] uppercase tracking-[0.16em] text-foreground pt-3">
+          <p className="font-mono text-2xs uppercase text-foreground pt-3">
             What&rsquo;s included
           </p>
           <ul className="grid gap-2.5 list-none p-0">
             {included.map((line) => (
               <li
                 key={line}
-                className="flex items-start gap-2.5 text-[14px] font-light text-foreground leading-snug"
+                className="flex items-start gap-2.5 text-sm font-normal text-foreground leading-snug"
               >
-                <span aria-hidden="true" className="mt-[3px] flex-none text-primary">
+                <span aria-hidden="true" className="mt-1 flex-none text-primary">
                   <Tick size={16} />
                 </span>
                 <span>{line}</span>

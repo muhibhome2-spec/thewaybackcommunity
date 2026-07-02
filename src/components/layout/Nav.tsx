@@ -14,7 +14,7 @@ export function Nav() {
       <Container className="flex items-center justify-between py-4">
         <a
           href="#top"
-          className="font-mono text-[13px] tracking-[0.2em] uppercase font-medium text-foreground hover:opacity-80 transition-opacity focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background rounded-sm"
+          className="font-mono text-xs font-medium text-foreground hover:opacity-80 transition-opacity focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background rounded-sm"
         >
           The Way Back <span className="text-primary">Community</span>
         </a>

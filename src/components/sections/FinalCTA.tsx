@@ -12,7 +12,7 @@ export function FinalCTA() {
     >
       <Container>
         <Reveal>
-          <h2 id="final-title" className="text-h2-final font-light text-foreground">
+          <h2 id="final-title" className="text-3xl font-normal text-foreground">
             They are still in there.
             <br />
             <Em>Let&rsquo;s not do it alone.</Em>
@@ -22,7 +22,7 @@ export function FinalCTA() {
               Join the community
             </ScrollButton>
           </div>
-          <p className="mt-7 font-mono text-[12px] tracking-[0.12em] uppercase text-meta">
+          <p className="mt-7 font-mono text-2xs uppercase text-meta">
             From £10.99 a month · founding price for the first 100
           </p>
         </Reveal>

@@ -29,7 +29,7 @@ export function FoundingProgress({ className }: FoundingProgressProps) {
       >
         <div className="h-full rounded-pill bg-primary" style={{ width: `${pct}%` }} />
       </div>
-      <p className="mt-1.5 font-mono text-[11px] uppercase tracking-[0.1em] text-meta">
+      <p className="mt-1.5 font-mono text-2xs uppercase text-meta">
         {claimed} of {total} founding spots claimed
       </p>
     </div>

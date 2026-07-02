@@ -12,13 +12,18 @@ type HeadingProps = {
   className?: string;
 };
 
+/**
+ * Size names describe *role* (h1, h2-feed…), not the literal token —
+ * they map onto the shared type scale in tailwind.config.ts so every
+ * heading on the page draws from the same ratio-derived steps.
+ */
 const sizes: Record<HeadingSize, string> = {
-  h1: "text-h1 font-light",
-  h2: "text-h2 font-light",
-  "h2-feed": "text-h2-feed font-light",
-  "h2-final": "text-h2-final font-light",
-  h3: "text-h3 font-normal",
-  display: "text-display font-normal",
+  h1: "text-4xl font-normal",
+  h2: "text-2xl font-normal",
+  "h2-feed": "text-xl font-normal",
+  "h2-final": "text-3xl font-normal",
+  h3: "text-lg font-medium",
+  display: "text-5xl font-medium",
 };
 
 /**

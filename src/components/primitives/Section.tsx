@@ -60,7 +60,7 @@ export function Section({
       className={cn("w-full", tones[tone], className)}
     >
       <Container
-        className={cn("py-[clamp(62px,9vw,110px)]", innerClassName)}
+        className={cn("py-[clamp(64px,42.2px+5.45vw,112px)]", innerClassName)}
       >
         {children}
       </Container>

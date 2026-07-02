@@ -3,7 +3,7 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "../../lib/cn";
 
 const badgeVariants = cva(
-  "inline-flex items-center rounded-pill font-mono uppercase tracking-[0.14em] transition-colors",
+  "inline-flex items-center rounded-pill font-mono uppercase transition-colors",
   {
     variants: {
       variant: {
@@ -13,8 +13,8 @@ const badgeVariants = cva(
         soft: "bg-clay-tint text-primary",
       },
       size: {
-        default: "text-[10px] px-3 py-[6px]",
-        sm: "text-[9px] px-2.5 py-1",
+        default: "text-2xs px-3 py-1.5",
+        sm: "text-2xs px-2.5 py-1",
       },
     },
     defaultVariants: {

@@ -22,11 +22,11 @@ export function BehindTheScreen() {
           </div>
           <h2
             id="bts-title"
-            className="mt-3 text-[clamp(32px,5vw,52px)] font-normal tracking-[-0.03em] leading-[1] text-foreground"
+            className="mt-3 text-2xl font-medium text-foreground"
           >
             Behind the Screen
           </h2>
-          <p className="mt-4 max-w-[640px] text-[clamp(17px,2vw,20px)] font-light text-muted-foreground leading-relaxed">
+          <p className="mt-4 max-w-measureSm text-base font-normal text-muted-foreground">
             A four-week masterclass in the world your teenager actually lives
             in. The phone, the culture, the language, all of it, finally made
             clear. A course parents would gladly pay for, yours at no extra
@@ -46,14 +46,14 @@ export function BehindTheScreen() {
               }
             >
               <Reveal delay={i * 60} className="contents">
-                <span className="font-mono text-kicker tracking-[0.14em] uppercase text-primary">
+                <span className="font-mono text-xs uppercase text-primary">
                   {w.label}
                 </span>
                 <div>
-                  <div className="text-[clamp(19px,2.4vw,24px)] font-normal text-foreground">
+                  <div className="text-lg font-medium text-foreground">
                     {w.title}
                   </div>
-                  <p className="mt-1 text-[15px] font-light text-muted-foreground leading-relaxed max-w-[560px]">
+                  <p className="mt-1 text-sm font-normal text-muted-foreground max-w-measureSm">
                     {w.description}
                   </p>
                 </div>

@@ -7,8 +7,30 @@ import animate from "tailwindcss-animate";
  * shadcn semantic tokens (background, foreground, primary…) are wired
  * to the existing brand palette via CSS variables in src/index.css.
  * Brand-specific tokens live alongside them and remain the source of
- * truth for the warm paper / clay aesthetic — colours, type, and
- * spacing match the original design 1:1.
+ * truth for the warm paper / clay aesthetic — colours and voice are
+ * unchanged from the original design.
+ *
+ * ---------------------------------------------------------------------
+ * TYPE SCALE — one system, derived, not eyeballed.
+ *
+ * Fixed micro scale (labels, mono UI text — arithmetic, +2px/step,
+ * intentionally non-fluid since small UI chrome shouldn't grow with
+ * viewport): 2xs 11 · xs 13 · sm 15 · base 17.
+ *
+ * Fluid scale (body and up — geometric, two ratios sharing one base):
+ *   MIN(n) = 17 × 1.2^n    (mobile / 400px viewport — gentle growth)
+ *   MAX(n) = 17 × 1.333^n  (desktop / 1280px viewport — dramatic growth)
+ * At n=0 both ratios collapse to the same value (17px, "base") by
+ * construction — body text stays essentially fixed while headings
+ * fan out increasingly wide as n grows, which is what you actually
+ * want: paragraphs shouldn't grow much between phone and desktop,
+ * hero type should.
+ *
+ * Every clamp() below is computed with the standard fluid-type formula
+ * (min, min + slope·vw, max) between a 400px and 1280px viewport, not
+ * a hand-picked vw number — so every step interpolates at the same
+ * mathematical rate its own min/max implies.
+ * ---------------------------------------------------------------------
  */
 const config: Config = {
   darkMode: ["class"],
@@ -80,33 +102,33 @@ const config: Config = {
         mono: ["'JetBrains Mono'", "ui-monospace", "monospace"],
       },
       fontSize: {
-        "eyebrow-xs": ["11px", { letterSpacing: "0.10em", lineHeight: "1" }],
-        "eyebrow-sm": ["12px", { letterSpacing: "0.10em", lineHeight: "1" }],
-        kicker: ["13px", { letterSpacing: "0.24em", lineHeight: "1" }],
-        lead: ["clamp(18px,2.3vw,23px)", { lineHeight: "1.6" }],
-        sub: ["clamp(18px,2.5vw,24px)", { lineHeight: "1.55" }],
-        prose: ["clamp(18px,2.2vw,22px)", { lineHeight: "1.55" }],
-        list: ["clamp(19px,2.5vw,26px)", { lineHeight: "1.35", letterSpacing: "-0.01em" }],
-        "course-sub": ["clamp(19px,2.7vw,27px)", { lineHeight: "1.45" }],
-        "h3-sm": ["clamp(20px,2.4vw,26px)", { letterSpacing: "-0.02em", lineHeight: "1.2" }],
-        h3: ["clamp(23px,3vw,29px)", { letterSpacing: "-0.02em", lineHeight: "1.2" }],
-        "h3-lg": ["clamp(22px,3vw,30px)", { letterSpacing: "-0.02em", lineHeight: "1.15" }],
-        "h3-xl": ["clamp(28px,3.6vw,40px)", { letterSpacing: "-0.025em", lineHeight: "1.1" }],
-        h2: ["clamp(34px,5.6vw,58px)", { letterSpacing: "-0.03em", lineHeight: "1.05" }],
-        "h2-feed": ["clamp(26px,3.8vw,40px)", { letterSpacing: "-0.02em", lineHeight: "1.1" }],
-        "h2-final": ["clamp(36px,6.2vw,68px)", { letterSpacing: "-0.03em", lineHeight: "1.05" }],
-        h1: ["clamp(46px,9vw,104px)", { letterSpacing: "-0.035em", lineHeight: "1" }],
-        display: ["clamp(52px,11vw,118px)", { letterSpacing: "-0.045em", lineHeight: "0.92" }],
-        why: ["clamp(20px,2.7vw,28px)", { letterSpacing: "-0.015em", lineHeight: "1.42" }],
-        "why-big": ["clamp(26px,3.8vw,40px)", { lineHeight: "1.2" }],
-        price: ["clamp(50px,8vw,66px)", { lineHeight: "1", letterSpacing: "-0.04em" }],
-        stat: ["clamp(40px,6vw,60px)", { lineHeight: "1", letterSpacing: "-0.04em" }],
-        found: ["clamp(17px,2.3vw,22px)", { lineHeight: "1.45", letterSpacing: "-0.01em" }],
+        // Fixed micro scale — labels, mono chrome. Arithmetic, +2px/step.
+        "2xs": ["11px", { lineHeight: "1.4", letterSpacing: "0.08em" }],
+        xs: ["13px", { lineHeight: "1.3", letterSpacing: "0.16em" }],
+        sm: ["15px", { lineHeight: "1.5", letterSpacing: "0" }],
+        base: ["17px", { lineHeight: "1.55", letterSpacing: "0" }],
+
+        // Fluid scale — body-adjacent through display. Geometric, two
+        // ratios (1.2 mobile / 1.333 desktop) sharing the 17px base.
+        md: ["clamp(20px, 18.64px + 0.34vw, 23px)", { lineHeight: "1.45", letterSpacing: "-0.005em" }],
+        lg: ["clamp(24px, 21.27px + 0.68vw, 30px)", { lineHeight: "1.3", letterSpacing: "-0.01em" }],
+        xl: ["clamp(29px, 24px + 1.25vw, 40px)", { lineHeight: "1.2", letterSpacing: "-0.015em" }],
+        "2xl": ["clamp(35px, 26.36px + 2.16vw, 54px)", { lineHeight: "1.12", letterSpacing: "-0.02em" }],
+        "3xl": ["clamp(42px, 28.36px + 3.41vw, 72px)", { lineHeight: "1.08", letterSpacing: "-0.03em" }],
+        "4xl": ["clamp(51px, 31px + 5vw, 95px)", { lineHeight: "1.03", letterSpacing: "-0.035em" }],
+        "5xl": ["clamp(61px, 31px + 7.5vw, 127px)", { lineHeight: "0.95", letterSpacing: "-0.045em" }],
+      },
+      spacing: {
+        // A few brand-specific gaps that fall between the default 4px
+        // grid steps but recur often enough to name.
+        18: "4.5rem",
       },
       maxWidth: {
         page: "1040px",
         prose: "880px",
         proseSm: "720px",
+        measureLg: "820px",
+        measureSm: "640px",
         narrow: "660px",
         founder: "940px",
         pricing: "740px",
@@ -117,8 +139,8 @@ const config: Config = {
         md: "calc(var(--radius) - 4px)",
         sm: "calc(var(--radius) - 8px)",
         card: "16px",
-        "card-lg": "18px",
-        "card-xl": "22px",
+        "card-lg": "20px",
+        "card-xl": "24px",
       },
       boxShadow: {
         card: "0 16px 38px rgba(22,20,15,0.07)",

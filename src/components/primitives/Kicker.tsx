@@ -19,7 +19,7 @@ export function Kicker({ children, className, as: Tag = "div", id }: KickerProps
     <Tag
       id={id}
       className={cn(
-        "font-mono text-kicker uppercase text-clay",
+        "font-mono text-xs uppercase text-primary",
         className,
       )}
     >

@@ -9,7 +9,7 @@ type StarsProps = {
 export function Stars({ rating }: StarsProps) {
   return (
     <span
-      className="inline-flex gap-[3px] text-[15px] leading-none"
+      className="inline-flex gap-1 text-sm leading-none"
       role="img"
       aria-label={`${rating} out of 5 stars`}
     >

@@ -21,7 +21,7 @@ export function AboutBlock() {
           You know the feeling. The door that <Em>closed.</Em>
         </Heading>
 
-        <div className="mt-5 max-w-prose text-[17px] font-light text-muted-foreground leading-relaxed">
+        <div className="mt-5 max-w-prose text-base font-normal text-muted-foreground">
           <p>
             One word answers. A bedroom door that stays shut. When we are not
             sure, we guess &mdash; and guessing has a price. The distance
@@ -29,10 +29,10 @@ export function AboutBlock() {
           </p>
         </div>
 
-        <p className="mt-6 max-w-[720px] text-[clamp(20px,2.6vw,26px)] text-primary font-light leading-snug">
+        <p className="mt-6 max-w-proseSm text-lg text-primary font-normal">
           <Em>So we built the place we wished every parent had.</Em>
         </p>
-        <p className="mt-3 max-w-[720px] text-[17px] font-light text-foreground leading-relaxed">
+        <p className="mt-3 max-w-proseSm text-base font-normal text-foreground">
           The Way Back Community brings together the understanding, the tools,
           and the people who get it, so that no parent ever has to fight for
           their teenager alone again.

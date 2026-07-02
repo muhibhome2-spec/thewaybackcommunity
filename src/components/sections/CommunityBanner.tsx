@@ -18,7 +18,7 @@ const HIGHLIGHTS = [
 export function CommunityBanner() {
   return (
     <header id="top" className="bg-claybg border-b border-border">
-      <Container className="pt-[clamp(48px,7vw,80px)] pb-[clamp(40px,5vw,64px)]">
+      <Container className="pt-[clamp(56px,45.1px+2.73vw,80px)] pb-[clamp(40px,29.1px+2.73vw,64px)]">
         <div className="animate-rise [animation-delay:20ms] flex flex-wrap items-center gap-2">
           <Kicker as="span">The Way Back Community</Kicker>
           <span aria-hidden="true" className="text-meta">·</span>
@@ -28,11 +28,11 @@ export function CommunityBanner() {
           <Badge variant="soft" size="sm">Founding members</Badge>
         </div>
 
-        <h1 className="animate-rise [animation-delay:100ms] mt-6 max-w-[820px] text-[clamp(38px,6.4vw,72px)] font-light tracking-[-0.03em] leading-[1.05] text-foreground">
+        <h1 className="animate-rise [animation-delay:100ms] mt-6 max-w-measureLg text-3xl font-normal text-foreground">
           Nobody fights for their teenager <Em>alone.</Em>
         </h1>
 
-        <p className="animate-rise [animation-delay:180ms] mt-5 max-w-[640px] text-lead font-light text-muted-foreground">
+        <p className="animate-rise [animation-delay:180ms] mt-5 max-w-measureSm text-md font-normal text-muted-foreground">
           A membership for parents who want to understand the digital world,
           reconnect with their teenager, and never navigate modern parenting on
           their own.
@@ -43,7 +43,7 @@ export function CommunityBanner() {
             <li key={label}>
               <Badge
                 variant="outline"
-                className="gap-1.5 border-foreground/12 bg-background/70 px-3.5 py-[7px] font-sans text-[13px] font-normal normal-case tracking-normal text-foreground"
+                className="gap-1.5 border-foreground/12 bg-background/70 px-3.5 py-2 font-sans text-xs font-medium normal-case tracking-normal text-foreground"
               >
                 <Icon aria-hidden="true" className="size-3.5 text-primary" />
                 {label}

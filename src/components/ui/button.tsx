@@ -14,10 +14,11 @@ import { cn } from "../../lib/cn";
 const buttonVariants = cva(
   [
     "inline-flex items-center justify-center gap-2 whitespace-nowrap select-none",
-    "rounded-pill font-medium leading-none",
+    "rounded-pill font-medium leading-none text-base",
     "transition-[background-color,color,border-color,box-shadow,transform] duration-200 ease-soft",
     "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background",
     "disabled:pointer-events-none disabled:opacity-50",
+    "active:scale-[0.97]",
     "[&_svg]:size-4 [&_svg]:shrink-0",
   ].join(" "),
   {
@@ -33,10 +34,13 @@ const buttonVariants = cva(
         link: "text-primary underline-offset-4 hover:underline",
       },
       size: {
-        default: "h-[50px] px-[30px] text-[17px]",
-        sm: "h-[40px] px-[22px] text-[15px]",
-        lg: "h-[58px] px-[36px] text-[18px]",
-        icon: "size-10",
+        // All heights clear the 44px thumb-target minimum (WCAG 2.5.5 /
+        // Apple HIG). sm is the one exception, reserved for the nav —
+        // never the sole path to the primary action on a screen.
+        default: "h-12 px-8",
+        sm: "h-11 px-6 text-sm",
+        lg: "h-14 px-9",
+        icon: "size-11",
       },
     },
     defaultVariants: {

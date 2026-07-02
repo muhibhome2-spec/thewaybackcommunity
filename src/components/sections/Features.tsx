@@ -25,13 +25,13 @@ export function Features() {
           <Reveal key={f.title} delay={i * 60}>
             <Card interactive className="h-full">
               <CardHeader className="gap-2">
-                <p className="font-mono text-[12px] uppercase tracking-[0.16em] text-primary">
+                <p className="font-mono text-xs uppercase text-primary">
                   {f.cadence}
                 </p>
-                <CardTitle className="text-h3-sm">{f.title}</CardTitle>
+                <CardTitle className="text-lg">{f.title}</CardTitle>
               </CardHeader>
               <CardContent>
-                <CardDescription className="text-[15px]">{f.description}</CardDescription>
+                <CardDescription className="text-sm">{f.description}</CardDescription>
               </CardContent>
             </Card>
           </Reveal>

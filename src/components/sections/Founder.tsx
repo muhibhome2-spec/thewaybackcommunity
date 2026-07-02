@@ -17,7 +17,7 @@ export function Founder() {
         <Card className="bg-tint">
           <CardContent className="p-6 md:p-8">
             <div className="flex flex-col sm:flex-row gap-6 items-start">
-              <div className="flex-none w-[112px] h-[112px] rounded-full overflow-hidden border border-border bg-primary flex items-center justify-center">
+              <div className="flex-none w-28 h-28 rounded-full overflow-hidden border border-border bg-primary flex items-center justify-center">
                 {site.avatarUrl ? (
                   <img
                     src={site.avatarUrl}
@@ -29,25 +29,25 @@ export function Founder() {
                 ) : (
                   <span
                     aria-hidden="true"
-                    className="text-[40px] font-normal tracking-wide text-primary-foreground"
+                    className="text-[40px] font-medium tracking-wide text-primary-foreground"
                   >
                     MI
                   </span>
                 )}
               </div>
 
-              <div className="max-w-[560px]">
+              <div className="max-w-measureSm">
                 <h2
                   id="founder-title"
-                  className="text-[clamp(24px,3vw,32px)] font-normal text-foreground tracking-[-0.02em]"
+                  className="text-lg font-medium text-foreground"
                 >
                   Muhib Idris
                 </h2>
-                <p className="mt-2 font-mono text-[12px] tracking-[0.1em] uppercase text-primary">
+                <p className="mt-2 font-mono text-xs uppercase text-primary">
                   Writer · Educator · Publisher
                 </p>
 
-                <p className="mt-4 text-[16px] font-light text-muted-foreground leading-[1.6]">
+                <p className="mt-4 text-base font-normal text-muted-foreground">
                   Fifteen years as a writer and educator, studying and teaching
                   across four continents &mdash; and one pattern he kept
                   meeting: bright, deeply loved teenagers quietly struggling,

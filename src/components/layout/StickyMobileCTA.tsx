@@ -14,7 +14,7 @@ export function StickyMobileCTA() {
         "transition-transform duration-300 ease-soft"
       }
     >
-      <ScrollButton to={site.anchors.join} className="w-full">
+      <ScrollButton to={site.anchors.join} size="lg" className="w-full">
         Join the community — from £10.99/mo
       </ScrollButton>
     </div>

@@ -26,13 +26,13 @@ export function Method() {
         {method.map((step, i) => (
           <li key={step.title} className="p-5">
             <Reveal delay={i * 50}>
-              <span className="font-mono text-[11px] tracking-[0.1em] text-primary">
+              <span className="font-mono text-2xs text-primary">
                 {String(i + 1).padStart(2, "0")}
               </span>
-              <div className="mt-1.5 text-[16px] font-normal text-foreground">
+              <div className="mt-1.5 text-base font-medium text-foreground">
                 {step.title}
               </div>
-              <p className="mt-1 text-[13px] font-light text-muted-foreground leading-snug">
+              <p className="mt-1 text-sm font-normal text-muted-foreground leading-snug">
                 {step.description}
               </p>
             </Reveal>
@@ -41,21 +41,21 @@ export function Method() {
       </ol>
 
       <div className="mt-10">
-        <h3 className="font-mono text-[13px] uppercase tracking-[0.16em] text-primary mb-4">
+        <h3 className="font-mono text-xs uppercase text-primary mb-4">
           Why it works
         </h3>
         <ol className="grid gap-4 sm:grid-cols-2 list-none p-0">
           {whyItWorks.map((w, i) => (
             <Reveal key={w.title} delay={i * 50}>
               <div className="flex gap-3">
-                <div className="flex-none w-8 h-8 rounded-full bg-clay-tint text-primary font-mono text-[12px] flex items-center justify-center leading-none">
+                <div className="flex-none w-8 h-8 rounded-full bg-clay-tint text-primary font-mono text-2xs flex items-center justify-center leading-none">
                   {String(i + 1).padStart(2, "0")}
                 </div>
                 <div>
-                  <div className="text-[17px] font-normal text-foreground tracking-[-0.01em]">
+                  <div className="text-base font-medium text-foreground">
                     {w.title}
                   </div>
-                  <p className="mt-0.5 text-[14px] font-light text-muted-foreground leading-snug">
+                  <p className="mt-0.5 text-sm font-normal text-muted-foreground leading-snug">
                     {w.description}
                   </p>
                 </div>

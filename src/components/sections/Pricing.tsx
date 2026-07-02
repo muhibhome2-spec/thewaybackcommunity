@@ -17,22 +17,22 @@ export function Pricing() {
   return (
     <Section tone="tint" id="pricing" labelledBy="pricing-title">
       <Reveal>
-        <Kicker className="mb-[22px]">Membership</Kicker>
+        <Kicker className="mb-6">Membership</Kicker>
         <Heading id="pricing-title" level={2} size="h2">
           One community. <Em>Two ways</Em> to join.
         </Heading>
       </Reveal>
 
-      <div className="mx-auto mt-9 max-w-[720px] text-center bg-clay-tint border border-clay-line rounded-card px-7 py-5">
-        <p className="text-found font-light">
+      <div className="mx-auto mt-9 max-w-proseSm text-center bg-clay-tint border border-clay-line rounded-card px-7 py-5">
+        <p className="text-md font-normal">
           <strong className="font-semibold text-primary">Founding offer.</strong>{" "}
           The first 100 members lock in today&rsquo;s price for as long as they
           stay. After 100, the price goes up.
         </p>
-        <FoundingProgress className="mt-4 max-w-[320px] mx-auto" />
+        <FoundingProgress className="mt-4 max-w-xs mx-auto" />
       </div>
 
-      <div className="mx-auto mt-9 max-w-pricing grid gap-[18px] md:grid-cols-2">
+      <div className="mx-auto mt-9 max-w-pricing grid gap-5 md:grid-cols-2">
         <PriceCard
           plan="Monthly"
           amount="£10.99"
@@ -93,16 +93,16 @@ function PriceCard({
         <Badge className="absolute -top-3 left-7">Best value</Badge>
       )}
       <CardHeader className="pb-0">
-        <div className="font-mono text-[12px] uppercase tracking-[0.16em] text-meta">
+        <div className="font-mono text-xs uppercase text-meta">
           {plan}
         </div>
-        <div className="flex items-baseline gap-2 leading-none tracking-[-0.04em] font-light">
-          <span className="text-price text-foreground">{amount}</span>
-          <span className="text-[19px] text-meta">{period}</span>
+        <div className="flex items-baseline gap-2 leading-none tracking-[-0.04em] font-normal">
+          <span className="text-2xl text-foreground">{amount}</span>
+          <span className="text-base text-meta">{period}</span>
         </div>
       </CardHeader>
       <CardContent className="pt-3">
-        <p className="text-[17px] font-light text-muted-foreground leading-relaxed">
+        <p className="text-base font-normal text-muted-foreground">
           {terms}
         </p>
       </CardContent>
