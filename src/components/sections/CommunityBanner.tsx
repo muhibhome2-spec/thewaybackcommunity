@@ -20,8 +20,7 @@ export function CommunityBanner() {
     <header id="top" className="bg-claybg border-b border-border">
       <Container className="pt-[clamp(56px,45.1px+2.73vw,80px)] pb-[clamp(40px,29.1px+2.73vw,64px)]">
         <div className="animate-rise [animation-delay:20ms] flex flex-wrap items-center gap-2">
-          <Kicker as="span">The Way Back Community</Kicker>
-          <span aria-hidden="true" className="text-meta">·</span>
+          <Kicker as="span" className="mr-1">The Way Back Community</Kicker>
           <Badge variant="outline" size="sm" className="border-foreground/25 text-meta">
             Private group
           </Badge>

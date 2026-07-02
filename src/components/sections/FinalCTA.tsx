@@ -1,5 +1,4 @@
 import { Container } from "../primitives/Container";
-import { Reveal } from "../primitives/Reveal";
 import { ScrollButton } from "../primitives/ScrollButton";
 import { Em } from "../primitives/Heading";
 import { site } from "../../config/site";
@@ -11,7 +10,6 @@ export function FinalCTA() {
       className="py-[clamp(80px,12vw,132px)] text-center"
     >
       <Container>
-        <Reveal>
           <h2 id="final-title" className="text-3xl font-normal text-foreground">
             They are still in there.
             <br />
@@ -25,7 +23,6 @@ export function FinalCTA() {
           <p className="mt-7 font-mono text-2xs uppercase text-meta">
             From £10.99 a month · founding price for the first 100
           </p>
-        </Reveal>
       </Container>
     </section>
   );

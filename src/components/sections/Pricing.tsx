@@ -1,5 +1,4 @@
 import { Section } from "../primitives/Section";
-import { Reveal } from "../primitives/Reveal";
 import { Kicker } from "../primitives/Kicker";
 import { Em, Heading } from "../primitives/Heading";
 import { Button } from "../ui/button";
@@ -16,12 +15,10 @@ import { site } from "../../config/site";
 export function Pricing() {
   return (
     <Section tone="tint" id="pricing" labelledBy="pricing-title">
-      <Reveal>
         <Kicker className="mb-6">Membership</Kicker>
         <Heading id="pricing-title" level={2} size="h2">
           One community. <Em>Two ways</Em> to join.
         </Heading>
-      </Reveal>
 
       <div className="mx-auto mt-9 max-w-proseSm text-center bg-clay-tint border border-clay-line rounded-card px-7 py-5">
         <p className="text-md font-normal">

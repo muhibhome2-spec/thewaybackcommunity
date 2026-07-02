@@ -1,6 +1,5 @@
 import { Users, Gift, Wallet } from "lucide-react";
 import { Section } from "../primitives/Section";
-import { Reveal } from "../primitives/Reveal";
 
 const POINTS = [
   {
@@ -33,21 +32,19 @@ export function WhatThisIs() {
       <h2 id="what-this-is-title" className="sr-only">
         What this is
       </h2>
-      <Reveal>
-        <dl className="grid grid-cols-1 sm:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x divide-border rounded-card-lg border border-border bg-soft overflow-hidden">
-          {POINTS.map(({ icon: Icon, label, body }) => (
-            <div key={label} className="p-5 flex flex-col gap-2">
-              <dt className="flex items-center gap-2 font-mono text-xs uppercase text-primary">
-                <Icon aria-hidden="true" className="size-4" />
-                {label}
-              </dt>
-              <dd className="text-sm font-normal text-foreground leading-snug">
-                {body}
-              </dd>
-            </div>
-          ))}
-        </dl>
-      </Reveal>
+      <dl className="grid grid-cols-1 sm:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x divide-border rounded-card-lg border border-border bg-soft overflow-hidden">
+        {POINTS.map(({ icon: Icon, label, body }) => (
+          <div key={label} className="p-5 flex flex-col gap-2">
+            <dt className="flex items-start gap-2 font-mono text-xs uppercase text-primary">
+              <Icon aria-hidden="true" className="size-4 flex-none mt-px" />
+              <span>{label}</span>
+            </dt>
+            <dd className="text-sm font-normal text-foreground leading-snug">
+              {body}
+            </dd>
+          </div>
+        ))}
+      </dl>
     </Section>
   );
 }

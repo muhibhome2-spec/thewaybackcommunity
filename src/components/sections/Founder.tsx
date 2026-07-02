@@ -1,5 +1,4 @@
 import { Section } from "../primitives/Section";
-import { Reveal } from "../primitives/Reveal";
 import { Kicker } from "../primitives/Kicker";
 import { Card, CardContent } from "../ui/card";
 import { site } from "../../config/site";
@@ -12,7 +11,6 @@ import { site } from "../../config/site";
 export function Founder() {
   return (
     <Section variant="feed" labelledBy="founder-title">
-      <Reveal>
         <Kicker className="mb-4">Hosted by</Kicker>
         <Card className="bg-tint">
           <CardContent className="p-6 md:p-8">
@@ -59,7 +57,6 @@ export function Founder() {
             </div>
           </CardContent>
         </Card>
-      </Reveal>
     </Section>
   );
 }

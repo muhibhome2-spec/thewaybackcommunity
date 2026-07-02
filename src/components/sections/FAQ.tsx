@@ -1,5 +1,4 @@
 import { Section } from "../primitives/Section";
-import { Reveal } from "../primitives/Reveal";
 import { Kicker } from "../primitives/Kicker";
 import { Heading } from "../primitives/Heading";
 import {
@@ -13,12 +12,10 @@ import { faqs } from "../../data/content";
 export function FAQ() {
   return (
     <Section variant="feed" labelledBy="faq-title">
-      <Reveal>
         <Kicker className="mb-4">Before you decide</Kicker>
         <Heading id="faq-title" level={2} size="h2-feed">
           The honest answers.
         </Heading>
-      </Reveal>
 
       <Accordion
         type="single"
